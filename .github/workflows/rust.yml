@@ -17,6 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install deps
-      run: vcpkg install openssl
+      run: |
+        vcpkg install openssl
+        vcpkg integrate install
     - name: build
       run: cargo build
