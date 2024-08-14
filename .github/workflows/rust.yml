@@ -16,5 +16,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
+    - name: install deps
+      run: vcpkg install openssl
     - name: build
       run: cargo build
