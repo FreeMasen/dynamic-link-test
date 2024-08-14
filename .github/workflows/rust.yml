@@ -1,0 +1,20 @@
+name: Rust
+
+on:
+  push:
+    branches: 
+      - "*"
+  pull_request:
+    branches: 
+      - "*"
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTC_LOG: rustc_codegen_ssa::back::link=info
+jobs:
+  test_runtime:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: build
+      run: cargo build
