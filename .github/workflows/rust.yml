@@ -19,6 +19,6 @@ jobs:
     - name: install deps
       run: |
         vcpkg install openssl
-        vcpkg integrate install
+        
     - name: build
-      run: cargo build
+      run: vcpkg integrate install && cargo build
